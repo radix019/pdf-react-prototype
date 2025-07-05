@@ -1,0 +1,26 @@
+:root {
+  --primary-color: #00bfff;
+  --secondary-color: #87cefa;
+  --tertiary-color: #87ceeb;
+}
+
+.main_container {
+  display: flex;
+}
+.main_screen {
+  margin-top: 1%;
+  margin-left: 1%;
+}
+.pdf-viewer_container {
+  border: 2px solid black;
+  height: 800px;
+  max-width: 500px;
+  overflow: auto;
+  svg {
+    color: black;
+    cursor: pointer;
+  }
+}
+.hand-tool-active {
+  cursor: grab;
+}
