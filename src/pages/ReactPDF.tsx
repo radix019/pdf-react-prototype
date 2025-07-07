@@ -11,7 +11,7 @@ import { BeatLoader } from 'react-spinners';
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 export default function ReactPdf() {
   const [numPages, setNumPages] = useState<number>();
-  const [pageNumber, setPageNumber] = useState<number>(1);
+  // const [pageNumber, setPageNumber] = useState<number>(1);
   const [scale, setScale] = useState(1.0);
 
   function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
@@ -39,7 +39,7 @@ export default function ReactPdf() {
         onLoadSuccess={onDocumentLoadSuccess}
       >
         {/* <Page pageNumber={pageNumber} /> */}
-        {Array.from(new Array(numPages), (el, index) => (
+        {Array.from(new Array(numPages), (_, index) => (
           <Page
             key={`page_${index + 1}`}
             pageNumber={index + 1}
@@ -47,9 +47,9 @@ export default function ReactPdf() {
           />
         ))}
       </Document>
-      <p>
+      {/* <p>
         Page {pageNumber} of {numPages}
-      </p>
+      </p> */}
     </div>
   );
 }
