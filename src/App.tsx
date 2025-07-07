@@ -1,9 +1,7 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Sidebar from "./components/Sidebar";
-import One from "./pages/ReactPDF";
-import Two from "./pages/Two";
-import Three from "./pages/Three";
-import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Sidebar from './components/Sidebar';
+import One from './pages/ReactPDF';
+import './App.css';
 
 function App() {
   return (
@@ -12,9 +10,13 @@ function App() {
         <Sidebar />
         <main className="main_screen">
           <Routes>
+            <Route
+              path="/"
+              element={
+                <h2>Welcome! Choose the prototype from the left sidebar.</h2>
+              }
+            />
             <Route path="/react-pdf" element={<One />} />
-            <Route path="/two" element={<Two />} />
-            <Route path="/three" element={<Three />} />
           </Routes>
         </main>
       </div>

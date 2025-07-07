@@ -6,6 +6,7 @@ import PDF_url from './World_Shipping.pdf';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
 import '../App.css';
+import { BeatLoader } from 'react-spinners';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 export default function ReactPdf() {
@@ -32,7 +33,11 @@ export default function ReactPdf() {
 
       <span style={{ color: 'black' }}>Scale {(scale * 100).toFixed(0)}%</span>
 
-      <Document file={PDF_url} onLoadSuccess={onDocumentLoadSuccess}>
+      <Document
+        file={PDF_url}
+        loading={<BeatLoader color="blue" />}
+        onLoadSuccess={onDocumentLoadSuccess}
+      >
         {/* <Page pageNumber={pageNumber} /> */}
         {Array.from(new Array(numPages), (el, index) => (
           <Page

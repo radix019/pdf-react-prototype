@@ -14,7 +14,7 @@
 .pdf-viewer_container {
   border: 2px solid black;
   height: 800px;
-  max-width: 500px;
+  max-width: 650px;
   overflow: auto;
   svg {
     color: black;
